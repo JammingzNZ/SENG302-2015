@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="490.0" prefWidth="485.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.ReportWindowController">
+    <children>
+        <VBox layoutX="15.0" layoutY="15.0" prefWidth="455.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+            <children>
+                <Label fx:id="paneTitle" layoutX="14.0" layoutY="14.0" text="Export Report" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox>
+                    <children>
+                        <Label text="Preset:">
+                            <HBox.margin>
+                                <Insets right="10.0" top="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="presetsCombo" onAction="#presetsAction" prefHeight="26.0" prefWidth="167.0">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <TabPane tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Projects">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <CheckBox fx:id="AllProjectsCheck" onAction="#boxChecked" mnemonicParsing="false" text=" All Projects">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TeamsInAllProjectsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Teams">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="PeopleInTeamsInAllProjectsCheck" onAction="#boxChecked" mnemonicParsing="false" text="People">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInPeopleInTeamsInAllProjectsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="60.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="ReleasesInAllProjectsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Releases">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="UnallocatedTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Unallocated Teams">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="PeopleInUnallocatedTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="People">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInPeopleInUnallocatedTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="UnallocatedPeopleCheck" onAction="#boxChecked" mnemonicParsing="false" text="Unallocated People">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInUnallocatedPeopleCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                            </children>
+                                            <padding>
+                                                <Insets left="20.0" top="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Backlogs">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <CheckBox fx:id="AllBacklogsCheck" onAction="#boxChecked" mnemonicParsing="false" text="All Backlogs">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="StoriesInAllBacklogsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Stories">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="ACsInStoriesInAllBacklogsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Acceptance Criteria">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="DepsInStoriesInAllBacklogsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Dependencies">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TasksInStoriesInAllBacklogsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Tasks">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="UnallocatedStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Unallocated Stories">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="ACsInUnallocatedStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Acceptance Criteria">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="DepsInUnallocatedStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Dependencies">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TasksInUnallocatedStoriesCheck" onAction="#boxChecked"  mnemonicParsing="false" text="Tasks">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                            </children>
+                                            <padding>
+                                                <Insets left="20.0" top="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Sprints">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <CheckBox fx:id="AllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="All Sprints">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TeamInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Team Assigned">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="PeopleInTeamInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="People">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInPeopleInTeamInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="60.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="StoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Stories">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="ACsInStoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Acceptance Criteria">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="DepsInStoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Dependencies">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TasksInStoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Tasks">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="PeopleInTasksInStoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="People Assigned">
+                                                    <VBox.margin>
+                                                        <Insets left="60.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="EffortInTasksInStoriesInAllSprintsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Effort Spent">
+                                                    <VBox.margin>
+                                                        <Insets left="60.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                            </children>
+                                            <padding>
+                                                <Insets left="20.0" top="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Other">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <CheckBox fx:id="AllTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="All Teams">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="PeopleInAllTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="People">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInPeopleInAllTeamsCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="40.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="AllPeopleCheck" onAction="#boxChecked" mnemonicParsing="false" text="All People">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="SkillsInAllPeopleCheck" onAction="#boxChecked" mnemonicParsing="false" text="Skills">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="AllSkillsCheck" onAction="#boxChecked" mnemonicParsing="false" text="All Skills">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="AllStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="All Stories">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="ACsInAllStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Acceptance Criteria">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="DepsInAllStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Dependencies">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="TasksInAllStoriesCheck" onAction="#boxChecked" mnemonicParsing="false" text="Tasks">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                            </children>
+                                            <padding>
+                                                <Insets left="20.0" top="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                    <padding>
+                        <Insets left="5.0" right="5.0" />
+                    </padding>
+                </TabPane>
+                <Label fx:id="errorMessageLabel" prefHeight="16.0" prefWidth="371.0" text="" textFill="RED">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                    <padding>
+                        <Insets right="20.0" />
+                    </padding>
+                </Label>
+                <AnchorPane>
+                    <children>
+                        <HBox AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <Button fx:id="cancelButton" cancelButton="true" layoutX="263.0" layoutY="353.0" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="77.0">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                                <Button defaultButton="true" layoutX="338.0" layoutY="353.0" mnemonicParsing="false" onAction="#exportAction" text="Export" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0">
+                                    <HBox.margin>
+                                        <Insets left="15.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

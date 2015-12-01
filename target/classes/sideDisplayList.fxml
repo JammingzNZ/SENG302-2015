@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="sideDisplayList" managed="false" visible="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Window.SideDisplayListController">
+    <children>
+        <AnchorPane maxHeight="39.0" maxWidth="200.0" minHeight="39.0" minWidth="200.0" prefHeight="39.0" prefWidth="200.0" style="-fx-border-width: 0 1 1 0; -fx-border-color: #c5c5c5; -fx-background-color: #f7f7f7;">
+            <children>
+                <ComboBox fx:id="sideBarCombo" onAction="#sideBarComboAction" prefHeight="25.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="7.0" />
+
+            </children>
+        </AnchorPane>
+        <ListView id="sideList" fx:id="displayList" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseClick" prefWidth="200.0" stylesheets="@styles/sidebar.css" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

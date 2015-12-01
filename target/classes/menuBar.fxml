@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<MenuBar useSystemMenuBar="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Window.MenuBarController">
+    <menus>
+        <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="true" onAction="#menuNewWorkspaceAction" text="New Workspace...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuLoadAction" text="Open Workspace...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="saveItem" disable="true" mnemonicParsing="true" onAction="#menuSaveAction" text="Save Workspace">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="saveAsItem" disable="false" mnemonicParsing="true" onAction="#menuSaveAsAction" text="Save Workspace As...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuExportStatusReport" text="Export XML Report...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="revertItem" disable="false" mnemonicParsing="true" onAction="#menuRevertAction" text="Revert">
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuCloseAction" text="Close">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Create">
+            <items>
+                <MenuItem mnemonicParsing="true" onAction="#menuNewProjectAction" text="Project">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="P" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuNewPersonAction" text="Person">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuNewSkillAction" text="Skill">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="K" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuNewTeamAction" text="Team">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="T" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuNewReleaseAction" text="Release">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuNewStoryAction" text="Story">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuNewBacklogAction" text="Backlog">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuNewSprintAction" text="Sprint">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Display">
+            <items>
+                <MenuItem fx:id="displayToggle" mnemonicParsing="true" onAction="#menuToggleAction" text="Toggle List">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="M" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="true" onAction="#menuDisplayProjectsAction" text="Projects">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="P" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuDisplayTeamsAction" text="Teams">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="T" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuDisplayPeopleAction" text="People">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="true" onAction="#menuDisplaySkillsAction" text="Skills">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="K" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuDisplayReleasesAction" text="Releases">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuDisplayStoriesAction" text="Stories">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuDisplayBacklogsAction" text="Backlogs">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#menuDisplaySprintsAction" text="Sprints">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                <MenuItem fx:id="undoItem" disable="true" mnemonicParsing="true" onAction="#menuEditUndoAction" text="Undo">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="redoItem" disable="true" mnemonicParsing="true" onAction="#menuEditRedoAction" text="Redo">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#menuSearchAction" text="Find...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem mnemonicParsing="true" onAction="#menuAboutAction" text="About...">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar>

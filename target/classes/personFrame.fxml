@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<AnchorPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="625.0" prefWidth="485.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.PersonFrameController">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="39.0" style="-fx-border-style: solid; -fx-border-color: #cccccc; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="paneTitle" text="New Person" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            <HBox alignment="TOP_RIGHT" layoutX="114.0" layoutY="-2.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.rightAnchor="5.0">
+               <children>
+                  <Button fx:id="deleteButton" alignment="TOP_LEFT" onAction="#deleteButtonAction">
+                     <HBox.margin>
+                        <Insets right="0.0" top="6.0" />
+                     </HBox.margin>
+                      <graphic>
+                          <FontAwesomeIcon size="1.5em" iconName="TRASH" />
+                      </graphic>
+                      <tooltip>
+                          <Tooltip text="Delete Item"/>
+                      </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="personTabPane" layoutX="15.0" layoutY="38.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+            <tabs>
+                <Tab fx:id="propertiesTab" closable="false" text="Properties">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <VBox prefHeight="233.0" prefWidth="370.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <Label layoutX="15.0" layoutY="120.0" text="Short Name" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="120.0" />
+                                                <Label fx:id="snAsterisk" text="*" textFill="RED">
+                                                    <HBox.margin>
+                                                        <Insets left="3.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <TextField fx:id="itemShortName" layoutX="15.0" layoutY="135.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="135.0">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Label layoutX="15.0" layoutY="38.0" text="First Name" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="38.0" />
+                                        <TextField fx:id="personFirstName" layoutX="15.0" layoutY="53.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="53.0">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Label layoutX="15.0" layoutY="79.0" text="Last Name" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="79.0" />
+                                        <TextField fx:id="personLastName" layoutX="15.0" layoutY="94.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="94.0">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Label layoutX="15.0" layoutY="161.0" text="ID" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="161.0" />
+                                        <TextField fx:id="personID" layoutX="15.0" layoutY="176.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="176.0">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <padding>
+                                        <Insets top="15.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="skillsTab" closable="false" text="Skills">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                            <children>
+                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="ALWAYS" />
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <ListView fx:id="skillsList" focusTraversable="false" layoutX="14.0" layoutY="277.0" prefHeight="132.0" prefWidth="175.0" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets right="5.0" />
+                                            </GridPane.margin>
+                                        </ListView>
+                                        <Label fx:id="availableSkillsLabel" layoutX="210.0" layoutY="257.0" text="Available Skills" GridPane.columnIndex="1">
+                                            <GridPane.margin>
+                                                <Insets left="5.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Button fx:id="addButton" layoutX="210.0" layoutY="409.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addSkillAction" prefHeight="25.0" prefWidth="175.0" text="&lt;- Add" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets left="5.0" />
+                                            </GridPane.margin>
+                                        </Button>
+                                        <Label fx:id="equippedSkillsLabel" layoutX="14.0" layoutY="257.0" text="Equipped Skills" />
+                                        <Button fx:id="removeButton" layoutX="14.0" layoutY="409.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeSkillAction" prefHeight="25.0" prefWidth="175.0" text="Remove -&gt;" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets right="5.0" />
+                                            </GridPane.margin>
+                                        </Button>
+                                        <ListView fx:id="availableList" focusTraversable="false" layoutX="210.0" layoutY="277.0" prefHeight="132.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets left="5.0" />
+                                            </GridPane.margin>
+                                        </ListView>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="15.0" top="15.0" />
+                                    </padding>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane layoutX="16.0" layoutY="459.0" style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="errorMessageLabel" prefHeight="16.0" prefWidth="371.0" text="" textFill="RED" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="329.0" layoutY="125.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                    <children>
+                        <Button fx:id="cancelButton" layoutX="263.0" layoutY="353.0" mnemonicParsing="false" onAction="#cancelAction" onKeyPressed="#handleCancelKeyPress" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="77.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="edit_doneButton" layoutX="338.0" layoutY="353.0" mnemonicParsing="false" onAction="#doneEditAction" onKeyPressed="#handleDoneKeyPress" text="Done" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0">
+                            <HBox.margin>
+                                <Insets left="15.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

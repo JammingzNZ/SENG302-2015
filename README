@@ -1,0 +1,14 @@
+Build
+=====
+
+cd <project root directory>
+mvn clean package assembly:single
+
+
+Running the application
+=======================
+
+obtain the project archive, seng320g6.zip
+unzip seng302g6.zip
+cd seng302g6
+java -jar seng302g6.jar

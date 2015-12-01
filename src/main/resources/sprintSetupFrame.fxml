@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>-->
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="1000.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.SprintFrameController">
+    <children>
+        <AnchorPane style="-fx-border-color: #cccccc; -fx-border-style: solid; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="paneTitle" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="39.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+            <children>
+                <TabPane fx:id="sprintTabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                        <Tab fx:id="propertiesTab" text="Creation">
+                            <content>
+                                <ScrollPane fitToWidth="true" prefViewportHeight="662.0" prefViewportWidth="633.0">
+                                    <content>
+                                        <AnchorPane maxWidth="1.7976931348623157E308">
+                                            <children>
+                                                <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <HBox maxWidth="1.7976931348623157E308">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="110.0" text="Goal (Short Name)" />
+                                                                <Label fx:id="snAsterisk" text="*" textFill="RED">
+                                                                    <HBox.margin>
+                                                                        <Insets left="3.0" />
+                                                                    </HBox.margin>
+                                                                </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets top="15.0" />
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                        <TextField fx:id="itemShortName" layoutX="15.0" layoutY="126.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0">
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                        <Label layoutX="10.0" layoutY="76.0" text="Full Name" />
+                                                        <TextField fx:id="sprintFullName" layoutX="10.0" layoutY="40.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0">
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                        <Label layoutX="14.0" layoutY="170.0" text="Description" />
+                                                        <TextArea fx:id="sprintDescription" layoutX="15.0" layoutY="186.0" minHeight="0.0" minWidth="0.0" onKeyPressed="#handleTextAreaKeyPress" prefHeight="97.0">
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" />
+                                                            </VBox.margin>
+                                                        </TextArea>
+                                                        <GridPane>
+                                                            <children>
+                                                                <Label text="Project:" />
+                                                                <ComboBox fx:id="projectCombo" onAction="#projectComboAction" prefHeight="26.0" prefWidth="234.0" GridPane.columnIndex="1" />
+                                                                <Label text="Release:" GridPane.rowIndex="1" />
+                                                                <HBox GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label fx:id="startDateLabel" text="Start Date:" GridPane.rowIndex="2" />
+                                                                    </children>
+                                                                    <GridPane.margin>
+                                                                        <Insets top="8.0" />
+                                                                    </GridPane.margin>
+                                                                </HBox>
+                                                                <HBox GridPane.rowIndex="3">
+                                                                    <children>
+                                                                        <Label fx:id="endDateLabel" text="End Date:">
+                                                                            <HBox.margin>
+                                                                                <Insets />
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                    </children>
+                                                                    <GridPane.margin>
+                                                                        <Insets top="8.0" />
+                                                                    </GridPane.margin>
+                                                                </HBox>
+                                                                <Label prefWidth="60.0" text="Team:" GridPane.rowIndex="4" />
+                                                                <Label prefWidth="75.0" text="Backlog:" GridPane.rowIndex="5" />
+                                                                <Label fx:id="backlogLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <ComboBox fx:id="releaseCombo" onAction="#releaseComboAction" prefHeight="26.0" prefWidth="234.0" />
+                                                                        <Label fx:id="releaseQuestion">
+                                                                            <HBox.margin>
+                                                                                <Insets left="5.0" top="7.0" />
+                                                                            </HBox.margin>
+                                                                            <!--<graphic>
+                                                                                <FontAwesomeIcon iconName="QUESTION_CIRCLE" size="1em" />
+                                                                            </graphic>-->
+                                                                            <tooltip>
+                                                                                <Tooltip text="Only releases with an estimated date in the future may be assigned." />
+                                                                            </tooltip>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                    <children>
+                                                                        <ComboBox fx:id="teamCombo" onAction="#teamComboAction" prefHeight="26.0" prefWidth="234.0" />
+                                                                        <Label fx:id="teamQuestion">
+                                                                            <HBox.margin>
+                                                                                <Insets left="5.0" top="7.0" />
+                                                                            </HBox.margin>
+                                                                            <!--<graphic>
+                                                                                <FontAwesomeIcon iconName="QUESTION_CIRCLE" size="1em" />
+                                                                            </graphic>-->
+                                                                            <tooltip>
+                                                                                <Tooltip text="Only teams that are allocated to the project for the full extent of the sprint may be assigned." />
+                                                                            </tooltip>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <DatePicker fx:id="startDatePicker" minWidth="-Infinity" onAction="#startDateAction" prefHeight="26.0" prefWidth="234.0" />
+                                                                        <Label fx:id="startDateQuestion">
+                                                                            <HBox.margin>
+                                                                                <Insets left="5.0" top="7.0" />
+                                                                            </HBox.margin>
+                                                                            <!--<graphic>
+                                                                                <FontAwesomeIcon iconName="QUESTION_CIRCLE" size="1em" />
+                                                                            </graphic>-->
+                                                                            <tooltip>
+                                                                                <Tooltip text="A start date in the past cannot be selected." />
+                                                                            </tooltip>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                    <children>
+                                                                        <DatePicker fx:id="endDatePicker" minWidth="-Infinity" onAction="#endDateAction" prefHeight="26.0" prefWidth="234.0" />
+                                                                        <Label fx:id="endDateQuestion">
+                                                                            <HBox.margin>
+                                                                                <Insets left="5.0" top="7.0" />
+                                                                            </HBox.margin>
+                                                                            <!--<graphic>
+                                                                                <FontAwesomeIcon iconName="QUESTION_CIRCLE" size="1em" />
+                                                                            </graphic>-->
+                                                                            <tooltip>
+                                                                                <Tooltip text="Only a end date before the allocated release's estimated date may be selected." />
+                                                                            </tooltip>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                        </GridPane>
+                                                        <HBox maxWidth="1.7976931348623157E308" />
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="15.0" right="15.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </ScrollPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </TabPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="73.0" layoutY="592.0" style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="errorMessageLabel" prefHeight="16.0" prefWidth="371.0" text="" textFill="RED" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="511.0" layoutY="531.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                    <children>
+                        <Button fx:id="cancelButton" layoutX="272.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelAction" onKeyPressed="#handleCancelKeyPress" text="Cancel" />
+                        <Button fx:id="edit_doneButton" layoutX="338.0" layoutY="331.0" mnemonicParsing="false" onAction="#doneEditAction" onKeyPressed="#handleDoneKeyPress" text="Done">
+                            <HBox.margin>
+                                <Insets left="15.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

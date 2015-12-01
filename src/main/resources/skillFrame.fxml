@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="400.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.SkillFrameController">
+    <children>
+        <AnchorPane prefHeight="39.0" style="-fx-border-color: #cccccc; -fx-border-style: solid; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="paneTitle" text="New Skill" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <HBox alignment="TOP_RIGHT" layoutX="114.0" layoutY="-2.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.rightAnchor="5.0">
+                    <children>
+                        <Button fx:id="deleteButton" alignment="TOP_LEFT" onAction="#deleteButtonAction">
+                            <HBox.margin>
+                                <Insets right="0.0" top="6.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <FontAwesomeIcon size="1.5em" iconName="TRASH" />
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Delete Item"/>
+                            </tooltip>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <TabPane layoutX="15.0" layoutY="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+            <tabs>
+                <Tab closable="false" text="Properties">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <VBox AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="51.0" text="Short Name" />
+                                                <Label fx:id="snAsterisk" text="*" textFill="RED">
+                                                    <HBox.margin>
+                                                        <Insets left="3.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <TextField fx:id="itemShortName" layoutX="15.0" layoutY="67.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Label layoutX="14.0" layoutY="110.0" text="Description" />
+                                        <TextArea fx:id="skillDescription" layoutX="15.0" layoutY="126.0" onKeyPressed="#handleTextAreaKeyPress" prefHeight="83.0" prefWidth="371.0" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </TextArea>
+                                    </children>
+                                    <padding>
+                                        <Insets top="15.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="errorMessageLabel" prefHeight="16.0" prefWidth="371.0" text="" textFill="RED" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="260.0" layoutY="237.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                    <children>
+                        <Button fx:id="cancelButton" layoutX="265.0" layoutY="238.0" mnemonicParsing="false" onAction="#cancelAction" onKeyPressed="#handleCancelKeyPress" text="Cancel">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="edit_doneButton" layoutX="338.0" layoutY="238.0" mnemonicParsing="false" onAction="#doneEditAction" onKeyPressed="#handleDoneKeyPress" text="Done">
+                            <HBox.margin>
+                                <Insets left="15.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+#sidebarTitle {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+#sideList {
+    -fx-border-color: #c5c5c5;
+    -fx-border-width: 0 1 0 0;
+    -fx-background-insets: 0px;
+    -fx-padding: 0;
+    -fx-border-insets: 0px;
+}
+
+.list-cell:selected {
+    -fx-background-color: dodgerblue;
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-background-color: None;
+}

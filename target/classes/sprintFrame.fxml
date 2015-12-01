@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+
+<AnchorPane maxHeight="1000.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.SprintFrameController">
+   <children>
+      <AnchorPane prefHeight="39.0" style="-fx-border-color: #cccccc; -fx-border-style: solid; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="paneTitle" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+                        <HBox alignment="TOP_RIGHT" layoutX="114.0" layoutY="-2.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Button fx:id="deleteButton" alignment="TOP_LEFT" onAction="#deleteButtonAction">
+                                 <HBox.margin>
+                                    <Insets right="0.0" top="6.0" />
+                                 </HBox.margin>
+                                  <graphic>
+                                      <FontAwesomeIcon iconName="TRASH" size="1.5em" />
+                                  </graphic>
+                                  <tooltip>
+                                      <Tooltip text="Delete Item" />
+                                  </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="38.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+         <children>
+            <TabPane fx:id="sprintTabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <tabs>
+                  <Tab fx:id="propertiesTab" text="Properties">
+                     <content>
+                        <AnchorPane maxWidth="1.7976931348623157E308">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox maxWidth="1.7976931348623157E308">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="110.0" text="Goal (Short Name)" />
+                                          <Label fx:id="snAsterisk" text="*" textFill="RED">
+                                             <HBox.margin>
+                                                <Insets left="3.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <TextField fx:id="itemShortName" layoutX="15.0" layoutY="126.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label layoutX="10.0" layoutY="76.0" text="Full Name" />
+                                    <TextField fx:id="sprintFullName" layoutX="10.0" layoutY="40.0" onKeyPressed="#handleTextFieldKeyPress" prefHeight="26.0" prefWidth="371.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label layoutX="14.0" layoutY="170.0" text="Description" />
+                                    <TextArea fx:id="sprintDescription" layoutX="15.0" layoutY="186.0" minHeight="0.0" minWidth="0.0" onKeyPressed="#handleTextAreaKeyPress" prefHeight="97.0" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                    <GridPane>
+                                       <children>
+                                          <Label text="Project:" />
+                                           <Label text="Release:" GridPane.rowIndex="1" />
+                                          <Label prefWidth="60.0" text="Team:" GridPane.rowIndex="4" />
+                                          <Label prefWidth="75.0" text="Backlog:" GridPane.rowIndex="5" />
+                                          <Label text="Start Date" GridPane.rowIndex="2" />
+                                          <Label text="End Date" GridPane.rowIndex="3" />
+                                          <Label fx:id="backlogLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="teamLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="endDateLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="startDateLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="releaseLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="projectLabel" style="-fx-font-weight: normal;" GridPane.columnIndex="1" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets left="15.0" right="15.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="storiesTab" closable="false" text="Stories">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                               <VBox fx:id="storyControls" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                  <children>
+                                 <TableView fx:id="sprintStories" editable="true" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                                    <columnResizePolicy>
+                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                    <columns>
+                                       <TableColumn fx:id="storyNameColumn" minWidth="0.0" prefWidth="460.0" text="Story Name" />
+                                    </columns>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                 </TableView>
+                                    <VBox>
+                                       <children>
+                                          <Label fx:id="addStoryLabel" text="Add Story">
+                                              <graphic>
+                                                  <Label fx:id="storyQuestion">
+                                                      <tooltip>
+                                                          <Tooltip text="Only stories in this Sprint's backlog (that are not already in a Sprint) can be added." />
+                                                      </tooltip>
+                                                  </Label>
+                                              </graphic>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <GridPane VBox.vgrow="NEVER">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                             <HBox>
+                                                <children>
+                                                   <ComboBox fx:id="storyCombo" prefHeight="25.0" prefWidth="250.0">
+                                                      <HBox.margin>
+                                                         <Insets right="10.0" />
+                                                      </HBox.margin>
+                                                      </ComboBox>
+                                                   <Button fx:id="addStoryButton" mnemonicParsing="false" onAction="#addStoryAction" text="Add">
+                                                      <HBox.margin>
+                                                         <Insets right="10.0" />
+                                                      </HBox.margin>
+                                                   </Button>
+                                                   <Button fx:id="deleteStoryButton" disable="true" mnemonicParsing="false" onAction="#deleteStoryAction" text="Remove" />
+                                                </children>
+                                                <VBox.margin>
+                                                   <Insets bottom="10.0" top="10.0" />
+                                                </VBox.margin>
+                                             </HBox>
+                                                <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="10.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <Button fx:id="editStoryButton" disable="true" mnemonicParsing="false" onAction="#editStoryButtonAction" text="Edit Story" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                  </children>
+                               </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="scrumBoardTab" text="Scrum Board">
+                    <content>
+              </content>
+                     <content>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="-1.0" prefViewportWidth="633.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <AnchorPane maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <VBox prefHeight="-1" prefWidth="630.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Sprint Stories">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Accordion fx:id="scrumBoardStories">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Accordion>
+                                       </children>
+                                       <padding>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="allTasksTab" text="All Tasks">
+                     <content>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                          <content>
+                            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label fx:id="tableTitle" text="Unassigned Tasks">
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TableView fx:id="allTasksTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TableColumn fx:id="taskTableStoryColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Story" />
+                                                <TableColumn fx:id="taskTableShortNameColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Task Name" />
+                                                <TableColumn fx:id="taskTableStatusColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Status" />
+                                                <TableColumn fx:id="taskTableEstimateColumn" maxWidth="75.0" minWidth="75.0" text="Time Left" />
+                                                <TableColumn fx:id="taskTableEffortColumn" maxWidth="85.0" minWidth="85.0" text="Effort Spent" />
+                                             </columns>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                          <HBox>
+                                             <children>
+                                                <RadioButton fx:id="allTasksRadio" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#allTasksAction" text="All Tasks">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </RadioButton>
+                                                <RadioButton fx:id="unassignedTasksRadio" mnemonicParsing="false" onAction="#unassignedTasksAction" text="Unassigned Tasks">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </RadioButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: white;" text="Unassigned" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: lightblue;" text="Pending" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: lightgray;" text="Not started" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: indianred;" text="Blocked" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: lightgreen;" text="Ready" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: plum;" text="Deferred" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: gold;" text="In progress" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="508.0" layoutY="10.0" style="-fx-font-weight: normal; -fx-background-radius: 2; -fx-background-color: limegreen;" text="Done">
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="burndownTab" text="Burndown Chart">
+                     <content>
+                        <LineChart fx:id="burndownChart" createSymbols="false" legendSide="RIGHT" title="Sprint Name">
+                          <xAxis>
+                            <CategoryAxis endMargin="0.0" gapStartAndEnd="false" label="Date" side="BOTTOM" startMargin="0.0" tickLabelGap="2.0" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Effort (Hours)" side="LEFT" />
+                          </yAxis>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </LineChart>
+                     </content>
+                  </Tab>
+               </tabs>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="73.0" layoutY="592.0" style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+             <Label fx:id="errorMessageLabel" prefHeight="16.0" prefWidth="371.0" text="" textFill="RED" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <HBox layoutX="511.0" layoutY="531.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <Button fx:id="cancelButton" layoutX="272.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelAction" onKeyPressed="#handleCancelKeyPress" text="Cancel" />
+                  <Button fx:id="edit_doneButton" layoutX="338.0" layoutY="331.0" mnemonicParsing="false" onAction="#doneEditAction" onKeyPressed="#handleDoneKeyPress" text="Done">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

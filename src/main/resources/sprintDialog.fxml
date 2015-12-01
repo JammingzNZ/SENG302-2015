@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.SprintDialogController">
+   <children>
+      <HBox layoutY="58.0" prefWidth="420.0">
+         <children>
+            <VBox>
+               <children>
+                  <GridPane minHeight="-Infinity">
+                     <children>
+                        <Label text="Project:" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <ComboBox fx:id="projectCombo" onAction="#projectComboAction" prefHeight="26.0" prefWidth="234.0" />
+                              <Label fx:id="projectQuestion">
+                                 <tooltip>
+                                    <Tooltip text="Only projects with a designated Backlog may be assigned." />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label text="Release:" GridPane.rowIndex="1" />
+                        <HBox GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="startDateLabel" text="Start Date:" GridPane.rowIndex="2" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets top="8.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="endDateLabel" text="End Date:">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets top="8.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <Label prefWidth="60.0" text="Team:" GridPane.rowIndex="4" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <ComboBox fx:id="releaseCombo" onAction="#releaseComboAction" prefHeight="26.0" prefWidth="234.0" />
+                              <Label fx:id="releaseQuestion">
+                                 <tooltip>
+                                    <Tooltip text="A project must contain release/s for them to be available. The&#10;estimated date of the release/s must also be in the future" />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <ComboBox fx:id="teamCombo" onAction="#teamComboAction" prefHeight="26.0" prefWidth="234.0" />
+                              <Label fx:id="teamQuestion">
+                                 <tooltip>
+                                    <Tooltip text="Only teams that are allocated to the selected project may be assigned" />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="teamWarning">
+                                 <tooltip>
+                                    <Tooltip text="Warning: This team is not allocated to the project for the full extent of the sprint." />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <DatePicker fx:id="startDatePicker" minWidth="-Infinity" onAction="#startDateAction" prefHeight="26.0" prefWidth="234.0" />
+                              <Label fx:id="startDateQuestion">
+                                 <tooltip>
+                                    <Tooltip text="A start after the end date or release date cannot be selected." />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <DatePicker fx:id="endDatePicker" minWidth="-Infinity" onAction="#endDateAction" prefHeight="26.0" prefWidth="234.0" />
+                              <Label fx:id="endDateQuestion">
+                                 <tooltip>
+                                    <Tooltip text="An end date before the start date or after the release date cannot be selected." />
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <HBox>
+                     <children>
+                        <Label fx:id="errorMessageLabel" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="9.0" prefWidth="420.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="createButton" mnemonicParsing="false" onAction="#createButtonAction" text="Create">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" text="Cancel">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="58.0" prefWidth="420.0" style="-fx-background-color: #b4b4b4, linear-gradient(#e2e2e2,#e2e2e2,#eeeeee); -fx-border-width: 1px; -fx-border-color: #b4b4b4 transparent #b4b4b4 transparent;">
+         <children>
+            <Label style="-fx-font-size: 1.249999em;;" text="Select the project, release, dates and team for this Sprint. These cannot be changed." wrapText="true">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

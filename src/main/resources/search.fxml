@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.SearchController">
+    <children>
+        <TextField fx:id="searchBox" layoutX="490.0" layoutY="14.0" prefHeight="26.0" prefWidth="544.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="15.0" />
+        <Button fx:id="closeButton" focusTraversable="false" graphicTextGap="0.0" layoutX="571.0" layoutY="21.0" maxHeight="15.0" maxWidth="15.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="0.0" style="-fx-background-radius: 5em; -fx-background-color: None" AnchorPane.rightAnchor="15.0">
+            <font>
+                <Font size="9.0" />
+            </font>
+            <graphic>
+                <FontAwesomeIcon size="2em" iconName="TIMES_CIRCLE"/>
+            </graphic>
+        </Button>
+        <HBox layoutX="15.0" layoutY="55.0" prefWidth="540.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="55.0">
+            <children>
+                <RadioButton fx:id="currentListRadio" focusTraversable="false" mnemonicParsing="false" onAction="#search" text="Current List">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="searchOption" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="workspaceRadio" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#search" selected="true" text="Workspace" toggleGroup="$searchOption">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </RadioButton>
+                <CheckBox fx:id="shortNameOnlyCheck" focusTraversable="false" mnemonicParsing="false" onAction="#search" text="Short Name Only" />
+            </children>
+        </HBox>
+        <Separator layoutX="26.0" layoutY="110.0" prefHeight="5.0" prefWidth="562.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0" />
+        <ListView fx:id="resultsList" onKeyPressed="#keyPressed" onMouseClicked="#mouseClicked" focusTraversable="true" layoutX="27.0" layoutY="100.0" prefHeight="200.0" prefWidth="540.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="87.0" />
+    </children>
+</AnchorPane>

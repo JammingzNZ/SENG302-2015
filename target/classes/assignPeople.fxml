@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.AssignPeopleController">
+   <children>
+      <HBox AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Assigned People" />
+                  <ListView fx:id="assignedPeopleList" focusTraversable="false" maxHeight="200.0" maxWidth="150.0" minHeight="200.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" />
+                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#removePersonAction" prefHeight="26.0" prefWidth="150.0" text="Remove -&gt;" />
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label text="Unassigned People" />
+                  <ListView fx:id="unassignedPeopleList" focusTraversable="false" maxHeight="200.0" maxWidth="150.0" minHeight="200.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" />
+                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#addPersonAction" prefHeight="26.0" prefWidth="150.0" text="&lt;- Add" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <AnchorPane layoutY="266.0" prefHeight="50.0" prefWidth="340.0" style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox layoutX="265.0" layoutY="330.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <Button fx:id="doneButton" layoutX="310.0" layoutY="504.0" mnemonicParsing="false" onAction="#doneButtonAction" text="Done" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="28.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="15.0" />
+   </padding>
+</AnchorPane>

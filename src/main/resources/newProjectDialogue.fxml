@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="newProject" maxHeight="269.0" maxWidth="400.0" minHeight="232.0" minWidth="400.0" prefHeight="232.0" prefWidth="400.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.NewProjectController">
+    <children>
+        <Label layoutX="14.0" layoutY="2.0" text="New Project" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="2.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutY="-3.0" prefHeight="232.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="12.0" layoutY="40.0" text="Project Name" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="40.0" />
+                <Label layoutX="13.0" layoutY="86.0" prefHeight="16.0" prefWidth="120.0" text="Short Name" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="86.0" />
+                <Label layoutX="12.0" layoutY="132.0" text="Description" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="309.0" AnchorPane.topAnchor="132.0" />
+
+                <TextField fx:id="projectName" layoutX="12.0" layoutY="58.0" prefHeight="25.0" prefWidth="371.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="58.0" />
+                <TextField fx:id="projectShortName" layoutX="12.0" layoutY="104.0" prefHeight="25.0" prefWidth="371.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="104.0" />
+                <TextField fx:id="projectDesc" layoutX="11.0" layoutY="151.0" prefHeight="3.0" prefWidth="371.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="151.0" />
+                <Button cancelButton="true" focusTraversable="false" layoutX="242.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="183.0" />
+
+                <Button defaultButton="true" focusTraversable="false" layoutX="315.0" layoutY="183.0" mnemonicParsing="false" onAction="#createAction" prefHeight="25.0" prefWidth="66.0" text="Create" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="183.0" />
+                <Label fx:id="message" layoutX="107.0" layoutY="86.0" prefHeight="16.0" prefWidth="276.0" text="" textFill="RED">
+                    <font>
+                        <Font size="11.0" />
+                    </font></Label>
+                <Label layoutX="97.0" layoutY="86.0" text="*" textFill="RED" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

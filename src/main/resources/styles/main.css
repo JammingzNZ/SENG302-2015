@@ -1,0 +1,85 @@
+/* Used to make text-fields in the main frame appear as labels
+ * when in display mode
+ */
+.main-uneditable-textfield {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.main-uneditable-textarea {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+}
+
+.main-uneditable-textarea .content {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.main-uneditable-textarea:focused .content {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.main-uneditable-combobox .arrow {
+    visibility: hidden;
+}
+
+.content .label {
+    /* This might need to be done a different way in the future if we want to
+       have other labels in the main content area which aren't bold. */
+    -fx-font-weight: bold;
+}
+
+/* "Solution" to the above problem */
+.content .label.not-bold {
+    -fx-font-weight: normal;
+}
+
+.display-view{
+    -fx-opacity: 0.7;
+}
+
+.edit-view{
+    -fx-opacity: 1;
+}
+
+.text-area-display-view .scroll-pane:disabled{
+    -fx-opacity: 1;
+}
+
+.display-view-listview .list-cell:odd:selected{
+    -fx-background-color: whitesmoke;
+}
+.display-view-listview .list-cell:even:selected{
+    -fx-background-color: white;
+}
+
+.edit-view-listview .list-cell:selected{
+    -fx-background-color: lightgrey;
+}
+
+.text-field.error {
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
+}
+
+/* Intellij is reporting an error on "derive", however it compiles and runs */
+.table-display .table-row-cell:filled:selected {
+    -fx-background: -fx-control-inner-background ;
+    -fx-background-color: -fx-table-cell-border-color, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-table-cell-border-color: derive(-fx-color, 5%);
+}
+.table-display .table-row-cell:odd:filled:selected {
+    -fx-background: -fx-control-inner-background-alt ;
+}
+
+.table-display{
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: -fx-text-box-border;
+
+}

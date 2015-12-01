@@ -1,0 +1,13 @@
+/**
+Tool bar stylesheet
+*/
+
+/*No background colour for all buttons on tool bar*/
+.button{
+    -fx-background-color: None;
+}
+
+.button:hover{
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}

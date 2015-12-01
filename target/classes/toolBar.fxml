@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<ToolBar prefHeight="45.0" onMouseClicked="#handleMouseClick" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Window.ToolBarController" stylesheets="@styles/toolBar.css">
+
+    <!-- New Workspace Button -->
+    <Button focusTraversable="false" onAction="#newWorkspaceAction" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="FILE" />
+        </graphic>
+        <tooltip>
+            <Tooltip text="New Workspace"/>
+        </tooltip>
+    </Button>
+
+    <!-- Save Button -->
+    <Button focusTraversable="false" fx:id="saveButton" onAction="#saveAction" disable="true" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="SAVE"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Save"/>
+        </tooltip>
+    </Button>
+
+    <!-- Load Button -->
+    <Button focusTraversable="false" onAction="#loadAction" prefWidth="42.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="FOLDER_OPEN"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Open"/>
+        </tooltip>
+    </Button>
+
+    <Separator orientation="VERTICAL"></Separator >
+
+    <!-- New Item Button -->
+    <Button focusTraversable="false" fx:id="newItemButton" onAction="#newItemAction" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="PLUS"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="New Item"/>
+        </tooltip>
+    </Button>
+
+
+    <Separator orientation="VERTICAL"></Separator>
+
+    <!-- Undo Button -->
+    <Button focusTraversable="false" fx:id="undoButton" onAction="#undoAction" disable="true" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="UNDO"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Undo"/>
+        </tooltip>
+    </Button>
+
+    <!-- Redo Button -->
+    <Button focusTraversable="false" fx:id="redoButton" onAction="#redoAction" disable="true" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="REPEAT"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Redo"/>
+        </tooltip>
+    </Button>
+
+    <!-- Revert Button -->
+    <Button focusTraversable="false" onAction="#revertAction" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="REFRESH"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Revert"/>
+        </tooltip>
+    </Button>
+
+    <Separator orientation="VERTICAL"></Separator>
+
+    <!-- Export Button -->
+    <Button focusTraversable="false" onAction="#exportAction" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="ARROW_CIRCLE_DOWN"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Export"/>
+        </tooltip>
+    </Button>
+
+    <Pane HBox.hgrow="ALWAYS" />
+
+    <!-- Search Button  -->
+    <Button focusTraversable="false" onAction="#searchAction" prefWidth="40.0">
+        <graphic>
+            <FontAwesomeIcon size="1.5em" iconName="SEARCH"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Find"/>
+        </tooltip>
+    </Button>
+
+</ToolBar>

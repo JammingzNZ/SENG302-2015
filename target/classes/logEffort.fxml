@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.EffortLoggingFrameController">
+   <children>
+      <HBox alignment="TOP_CENTER" layoutX="227.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <RadioButton fx:id="intervalRadio" layoutX="227.0" layoutY="14.0" mnemonicParsing="false" onAction="#intervalRadioAction" text="Interval">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="amountRadio" layoutX="305.0" layoutY="14.0" mnemonicParsing="false" onAction="#amountRadioAction" text="Amount" />
+         </children>
+      </HBox>
+      <GridPane layoutX="12.0" layoutY="39.0" prefHeight="51.0" prefWidth="656.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="221.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="224.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox prefHeight="45.0" prefWidth="129.0" GridPane.rowIndex="1">
+               <children>
+                  <DatePicker fx:id="startDate" layoutX="12.0" layoutY="64.0" prefHeight="26.0" prefWidth="125.0">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <TextField fx:id="startHour" prefHeight="25.0" prefWidth="38.0" promptText="00" />
+                  <Label text=":">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="startMinute" prefHeight="25.0" prefWidth="38.0" promptText="00">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <DatePicker fx:id="endDate" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="125.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <TextField fx:id="endHour" prefHeight="25.0" prefWidth="38.0" promptText="00" />
+                  <Label text=":">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="endMinute" prefHeight="25.0" prefWidth="38.0" promptText="00">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <Label text="Start Date &amp; Time (24hrs)" />
+            <Label fx:id="endLabel" text="End Date &amp; Time (24hrs)" GridPane.columnIndex="1" />
+            <Label text="Person" GridPane.columnIndex="3" />
+            <Label fx:id="spentLabel" text="Spent" GridPane.columnIndex="2" />
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="effortSpent" layoutX="269.0" layoutY="91.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" promptText="Minutes" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="personCombo" layoutX="498.0" layoutY="86.0" maxWidth="1.7976931348623157E308" onAction="#personComboAction" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="525.0" layoutY="64.0" HBox.hgrow="ALWAYS" />
+      <Label layoutX="12.0" layoutY="95.0" text="Comment" />
+      <HBox layoutX="12.0" layoutY="110.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+         <children>
+            <TextArea fx:id="commentTextArea" layoutX="12.0" layoutY="110.0" prefHeight="50.0" wrapText="true" HBox.hgrow="ALWAYS" />
+            <Button fx:id="addEffort" layoutX="592.0" layoutY="133.0" mnemonicParsing="false" onAction="#addEffortAction" prefHeight="26.0" prefWidth="45.0" text="Add" AnchorPane.rightAnchor="12.0">
+               <HBox.margin>
+                  <Insets left="10.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Separator layoutX="12.0" layoutY="199.0" prefHeight="3.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+      <TableView fx:id="pastEffortTable" layoutX="12.0" layoutY="232.0" prefHeight="200.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+        <columns>
+          <TableColumn fx:id="pastDateColumn" minWidth="-Infinity" prefWidth="111.0" resizable="false" text="Date" />
+            <TableColumn fx:id="pastPersonColumn" minWidth="-Infinity" prefWidth="181.0" resizable="false" text="Person" />
+            <TableColumn fx:id="pastSpentColumn" minWidth="-Infinity" prefWidth="95.0" resizable="false" text="Spent (m)" />
+            <TableColumn fx:id="pastCommentColumn" minWidth="-Infinity" prefWidth="278.0" resizable="false" text="Comment" />
+        </columns>
+      </TableView>
+      <Label layoutX="11.0" layoutY="210.0" text="Past Entries" />
+      <Label fx:id="errorMessageLabel" layoutX="11.0" layoutY="174.0" textFill="RED" />
+      <HBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="439.0" prefHeight="25.0" prefWidth="630.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Button fx:id="deleteEffort" disable="true" mnemonicParsing="false" onAction="#deleteEffortAction" prefHeight="25.0" prefWidth="70.0" text="Delete" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="46.0" prefHeight="15.0" prefWidth="666.0">
+         <children>
+            <HBox />
+         </children>
+      </HBox>
+      <AnchorPane layoutX="-1.0" layoutY="473.0" prefHeight="57.0" style="-fx-border-style: solid none none none; -fx-border-color: #cccccc;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox layoutX="265.0" layoutY="330.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <Button fx:id="doneButton" layoutX="310.0" layoutY="504.0" mnemonicParsing="false" onAction="#doneButtonAction" text="Done" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="28.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane fx:id="storyPane" contentDisplay="GRAPHIC_ONLY" text="Story 1" wrapText="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group6.Controller.Content.ScrumboardStoryController">
+  <content>
+    <AnchorPane prefHeight="280.0" prefWidth="493.0">
+         <children>
+            <TableView fx:id="taskTable" editable="true" layoutX="32.4" layoutY="30.4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+               <columns>
+                  <TableColumn fx:id="taskTableShortNameColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Name" />
+                  <TableColumn fx:id="taskTableStatusColumn" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Status" />
+                  <TableColumn fx:id="taskTableEstimateColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Time Left" />
+                  <TableColumn fx:id="taskTableEffortColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Effort Spent" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="21.0" layoutY="7.0" text="Tasks" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children></AnchorPane>
+  </content>
+   <graphic>
+      <VBox fx:id="storyPaneVBox" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity">
+         <children>
+            <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT">
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="Story:" HBox.hgrow="NEVER">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="storyPaneLabel" layoutX="20.0" layoutY="25.0" maxWidth="1.7976931348623157E308" style="-fx-font-weight: normal;" text="name here" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="25.0" maxWidth="1.7976931348623157E308" text="Status:">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="stateCombo" onAction="#stateComboAction" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <ProgressBar fx:id="storyPaneProgress" maxWidth="1.7976931348623157E308" onMouseClicked="#progressBarClickAction" progress="0.35" scaleY="0.5" style="-fx-color: black;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip fx:id="storyToolTip" text="Empty Tooltip" />
+               </tooltip>
+            </ProgressBar>
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </VBox>
+   </graphic>
+</TitledPane>
